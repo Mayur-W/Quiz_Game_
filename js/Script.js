@@ -20,6 +20,7 @@ var options = [["Kolkata", "New Delhi", "Mumbai", "Banglore"],
 
 
 var QuestionNumber = 0; // for current question no. we r on
+var OptionNumber = 0;
 var TotalQuestions = questions.length; // to measure the size of array and store it.
 var progress = 0
 var IncFactor = 100 / TotalQuestions   // amount of marks in percentagethat are being awarded for each question 
@@ -37,7 +38,8 @@ console.log(options[0])
 function nextbclick() {
     if (QuestionNumber < TotalQuestions - 1) { //here we wrote it bcz it has the value of 5 but we want to go upto only 4
         QuestionNumber++
-        QuestionDiv.innerHTML = `${QuestionNumber + 1}. ${questions[QuestionNumber]}`
+        QuestionDiv.innerHTML = `<p>${QuestionNumber + 1}. ${questions[QuestionNumber]}</p>`/*Here P tag is added becaues we want the question from the question class to be centered  */
+       OptionNumber++
         SetOptions()
     }
 
@@ -46,7 +48,8 @@ function nextbclick() {
 function prevbclick() {
     if (QuestionNumber >= 1) {
         QuestionNumber--
-        QuestionDiv.innerHTML = `${QuestionNumber + 1}. ${questions[QuestionNumber]}`
+        QuestionDiv.innerHTML = `<p>${QuestionNumber + 1}. ${questions[QuestionNumber]}</p>`/*Here P tag is added becaues we want the question from the question class to be centered  */
+        OptionNumber--
         SetOptions()
     }
 
@@ -54,20 +57,22 @@ function prevbclick() {
 
 function SetOptions() {
     OptionDiv.innerHTML = `<div>
-    <input type="radio" id="option1" name="options" value="${options[QuestionNumber][0]}">
-    <label for="option1">${options[QuestionNumber][0]}</label>
+    <input type="radio" id="option1" name="options" value="${options[OptionNumber][0]}">
+    <label for="option1">${options[OptionNumber][0]}</label>
 </div>
 <div>
-    <input type="radio" id="option2" name="options" value="${options[QuestionNumber][1]}">
-    <label for="option2">${options[QuestionNumber][1]}</label>
+    <input type="radio" id="option2" name="options" value="${options[OptionNumber][1]}">
+    <label for="option2">${options[OptionNumber][1]}</label>
 </div>
 <div>
-    <input type="radio" id="option3" name="options" value="${options[QuestionNumber][2]}">
-    <label for="option3">${options[QuestionNumber][2]}</label>
+    <input type="radio" id="option3" name="options" value="${options[OptionNumber][2]}">
+    <label for="option3">${options[OptionNumber][2]}</label>
 </div>
 <div>
-    <input type="radio" id="option4" name="options" value="${options[QuestionNumber][3]}">
-    <label for="option4">${options[QuestionNumber][3]}</label>
+    <input type="radio" id="option4" name="options" value="${options[OptionNumber][3]}">
+    <label for="option4">${options[OptionNumber][3]}</label>
 </div>`
     
 }
+
+
