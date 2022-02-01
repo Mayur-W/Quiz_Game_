@@ -2,28 +2,41 @@ var questions = ["What is the Capital of India ?",
     "Who is the Prime Minister of India ?",
     "Which is the National Animal of India ?",
     "Which is the National Bird of India ?",
-    "How many States and Union Teretory are in India ?"]
+    "How many States are in India ?",
+    "Which is the largest coffee-producing state of India ?",
+    "Which is India's largest city by population ?",
+    "What is the National Fruit of India ?",
+    "What is the National Sport of India ?",
+    "Which festival is celebrated in India as the festival of colours ?"]
 
 var answers = ["New Delhi",
     "Narendra Modi",
     "Tiger",
     "Peacock",
-    "28 States and 8 Union Territories"]
+    "28",
+    "Karnataka",
+    "Mumbai",
+    "Mango",
+    "Hockey",
+    "Holi"]
 
-var options = [["Kolkata", "New Delhi", "Mumbai", "Banglore"],
+var options = [["Kolkata", "New Delhi", "Mumbai", "Bengaluru"],
 ["Amit Shah", "Ram Nath Kovind", "Narendra Modi", "Nitin Gadkari"],
 ["Tiger", "Lion", "Elephant", "Panther"],
 ["Parrot", "Peacock", "Sparrow", "Eagle"],
-["27 States and 9 Union Territories", "29 States and 7 Union Territories",
-    "27 States and 8 Union Territories", "28 States and 8 Union Territories"]]
-
+["27", "29","30", "28"],
+["Karnataka","Arunachal Pradesh", "Assam", "Kerala"],
+["Delhi", "Bengaluru", "Mumbai", "Chennai"],
+["Apple", "Mango", "Banana", "Grapes"],
+["Cricket", "Hockey", "Kabaddi", "Football"],
+["Diwali", "Holi", "Dussehra", "Makar Sankranti"]]
 
 
 var QuestionNumber = 0; // for current question no. we r on
 var OptionNumber = 0;
 var TotalQuestions = questions.length; // to measure the size of array and store it.
 var progress = 0
-var IncFactor = 100 / TotalQuestions   // amount of marks in percentagethat are being awarded for each question 
+var IncFactor = 100 / TotalQuestions   // amount of marks in percentage that are being awarded for each question 
 
 const QuestionDiv = document.getElementsByClassName("question")[0] // QuestionDiv stores the html element which has class name as question
 QuestionDiv.innerHTML = `<p>${QuestionNumber + 1}. ${questions[QuestionNumber]}</p>`
@@ -75,4 +88,6 @@ function SetOptions() {
     
 }
 
-
+function submitbclick() {
+    
+}
